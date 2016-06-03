@@ -11,18 +11,18 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
 
-    var tableView: UITableView?
+    @IBOutlet weak var tableView: UITableView!
+    //var tableView: UITableView?
     
     var ctrlnames:[String] = ["UILabel 标签", "UIButton 按钮", "UIDatePiker 日期选择器"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tableView = UITableView(frame: UIScreen.mainScreen().applicationFrame, style: .Plain)
-        tableView!.dataSource = self
-        tableView!.delegate = self
-        tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
-        view.addSubview(tableView!)
+        //tableView = UITableView(frame: UIScreen.mainScreen().applicationFrame, style: .Plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SwiftCell")
         //给TableView添加表头页眉
         let headerView: UIView = UIView(frame: CGRectMake(0,0,tableView!.frame.size.width, 60))
         let headerLabel: UILabel = UILabel(frame: headerView.bounds)
